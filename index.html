@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nitish Joson</title>
+<meta name="description" content="Nitish Joson — UBC Engineering student building software for drones and mine safety. UBC UAS software team, co-founder of Statera.">
+<meta property="og:title" content="Nitish Joson">
+<meta property="og:description" content="UBC Engineering student building software for drones and mine safety.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<style>
+:root {
+  --bg: #fbfbfa; --fg: #1a1a1a; --muted: #5f6368; --faint: #e7e7e4;
+  --accent: #1f5fae; --card: #ffffff;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #111214; --fg: #e8e8e6; --muted: #9aa0a6; --faint: #26282c;
+    --accent: #7fb0ff; --card: #17191c;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #111214; --fg: #e8e8e6; --muted: #9aa0a6; --faint: #26282c;
+  --accent: #7fb0ff; --card: #17191c;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0; background: var(--bg); color: var(--fg);
+  font: 16px/1.6 ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; text-underline-offset: 3px; }
+.wrap { max-width: 720px; margin: 0 auto; padding: 0 20px; }
+
+nav { position: sticky; top: 0; background: color-mix(in srgb, var(--bg) 88%, transparent);
+  backdrop-filter: blur(8px); border-bottom: 1px solid var(--faint); z-index: 10; }
+nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 56px; }
+nav .brand { font-weight: 650; color: var(--fg); white-space: nowrap; }
+nav .links { display: flex; gap: 18px; align-items: center; font-size: 14px; }
+nav .links a { color: var(--muted); }
+nav .links a:hover { color: var(--fg); text-decoration: none; }
+#theme { background: none; border: 1px solid var(--faint); color: var(--muted); border-radius: 8px;
+  width: 32px; height: 32px; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; }
+#theme:hover { color: var(--fg); }
+@media (max-width: 560px) { nav .links a.hide-sm { display: none; } }
+
+header.hero { padding: 72px 0 40px; }
+.hero h1 { font-size: clamp(34px, 7vw, 46px); line-height: 1.1; margin: 0 0 14px; letter-spacing: -0.02em; }
+.hero p.lead { font-size: 19px; color: var(--muted); margin: 0 0 22px; max-width: 600px; }
+.hero p.lead strong { color: var(--fg); font-weight: 600; }
+.btns { display: flex; flex-wrap: wrap; gap: 10px; }
+.btn { display: inline-flex; align-items: center; gap: 6px; padding: 8px 14px; border-radius: 9px;
+  border: 1px solid var(--faint); color: var(--fg); font-size: 14px; background: var(--card); }
+.btn:hover { text-decoration: none; border-color: var(--muted); }
+.btn.primary { background: var(--fg); color: var(--bg); border-color: var(--fg); }
+
+section { padding: 28px 0; border-top: 1px solid var(--faint); }
+section h2 { font-size: 13px; text-transform: uppercase; letter-spacing: .12em; color: var(--muted);
+  margin: 0 0 18px; font-weight: 600; }
+
+.item { margin-bottom: 26px; }
+.item:last-child { margin-bottom: 0; }
+.item-head { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; align-items: baseline; }
+.item h3 { font-size: 17px; margin: 0; font-weight: 620; }
+.item .when { font-size: 14px; color: var(--muted); white-space: nowrap; }
+.item .role { color: var(--muted); font-size: 15px; margin: 2px 0 8px; }
+.item ul { margin: 0; padding-left: 18px; }
+.item li { margin: 4px 0; }
+.tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+.tag { font-size: 12px; padding: 2px 8px; border-radius: 999px; border: 1px solid var(--faint); color: var(--muted); }
+
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; }
+.card { background: var(--card); border: 1px solid var(--faint); border-radius: 12px; padding: 16px; }
+.card h3 { font-size: 16px; margin: 0 0 6px; }
+.card p { margin: 0; color: var(--muted); font-size: 14.5px; }
+.card .tags { margin-top: 12px; }
+
+.plain { list-style: none; padding: 0; margin: 0; }
+.plain li { padding: 6px 0; display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+.plain li span.muted { color: var(--muted); font-size: 14px; }
+
+.skills dt { font-weight: 600; font-size: 15px; }
+.skills dd { margin: 2px 0 12px; color: var(--muted); }
+
+footer { padding: 36px 0 56px; border-top: 1px solid var(--faint); color: var(--muted); font-size: 14px; }
+footer .row { display: flex; flex-wrap: wrap; gap: 16px; margin-bottom: 10px; }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="#">Nitish Joson</a>
+    <div class="links">
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a class="hide-sm" href="#awards">Awards</a>
+      <a href="#contact">Contact</a>
+      <button id="theme" aria-label="Toggle dark mode" title="Toggle theme"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6.5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M8 1.5a6.5 6.5 0 0 1 0 13z" fill="currentColor"/></svg></button>
+    </div>
+  </div>
+</nav>
+
+<main class="wrap">
+  <header class="hero">
+    <h1>Nitish Joson</h1>
+    <p class="lead">First-year engineering student at <strong>UBC</strong>, aiming for Engineering Physics. I build software for <strong>drones</strong> and <strong>mine safety</strong>: live video streaming on UBC’s autonomous aircraft team, and Statera, a safety platform for frontline mine workers.</p>
+    <div class="btns">
+      <a class="btn primary" href="resume.html">Résumé</a>
+      <a class="btn" href="mailto:nitishjoson83@gmail.com">Email</a>
+      <a class="btn" href="https://github.com/AstroAtomic" target="_blank" rel="noopener">GitHub</a>
+      <a class="btn" href="https://www.linkedin.com/in/nitish-joson-terance-joe-heston-978b7928b" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </header>
+
+  <section id="experience">
+    <h2>Experience</h2>
+
+    <div class="item">
+      <div class="item-head">
+        <h3><a href="https://ubcuas.com" target="_blank" rel="noopener">UBC Unmanned Aircraft Systems</a></h3>
+        <span class="when">Sept 2026 – Present</span>
+      </div>
+      <div class="role">Software Sub-Team · Vancouver, BC</div>
+      <ul>
+        <li>Building WebRTC signaling and RTSP video streaming to deliver live video from the aircraft to the team’s Ground Communication System (GCOM).</li>
+        <li>Selected from 115 applicants for a student team that designs, builds, and flies autonomous aircraft for international competition.</li>
+        <li>Working alongside the electrical and mechanical sub-teams in a multidisciplinary engineering environment.</li>
+      </ul>
+      <div class="tags"><span class="tag">ROS 2</span><span class="tag">WebRTC</span><span class="tag">RTSP</span></div>
+    </div>
+
+    <div class="item">
+      <div class="item-head">
+        <h3><a href="https://staterasafety.com/" target="_blank" rel="noopener">Statera</a></h3>
+        <span class="when">2026 – Present</span>
+      </div>
+      <div class="role">Co-Founder &amp; Developer · Saskatoon, SK</div>
+      <ul>
+        <li>Co-founded a safety communication and ticketing platform that lets frontline mine workers report hazards easily and tracks every issue to completion.</li>
+        <li>Developing an AI triage system that ranks safety tickets by hazard severity, using a priority/urgency/severity framework built around Saskatchewan mining regulations.</li>
+        <li>Designed crew-based ticket filtering so supervisors can switch between their own crew’s issues and the whole site.</li>
+        <li><strong>AI4SafeMines finalist</strong> (IMII &amp; ISSA): 1 of 3 finalist teams from 11. Pitched to an industry judging panel at the ISSA Mine Safety Conference in Saskatoon (Sept 2026).</li>
+      </ul>
+      <div class="tags"><span class="tag">TypeScript</span><span class="tag">AI / ML</span><span class="tag">Startup</span></div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>Projects &amp; Research</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Machine Learning in Chess</h3>
+        <p>Preprint in the Research Archive of Rising Scholars: can meta-game data like time usage and rating difference predict who wins? Built and tested Random Forest models to find out.</p>
+        <div class="tags"><span class="tag">Python</span><span class="tag">Random Forest</span><span class="tag">2025</span></div>
+      </div>
+      <div class="card">
+        <h3>GPS Positioning Simulation</h3>
+        <p>Interactive explainer of how GPS finds you: signal propagation, clock sync, special-relativity time correction, and trilateration.</p>
+        <div class="tags"><span class="tag">Java</span><span class="tag">Processing</span><span class="tag">2025</span></div>
+      </div>
+      <div class="card">
+        <h3>Echo</h3>
+        <p>A platformer set in a pitch-black world you navigate by echolocation. Engine written from scratch, with A* pathfinding for enemies.</p>
+        <div class="tags"><span class="tag">Java</span><span class="tag">Game engine</span><span class="tag">2025</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="awards">
+    <h2>Awards</h2>
+    <ul class="plain">
+      <li><span>Canadian Computing Competition — Senior Distinction</span><span class="muted">2025, 2026</span></li>
+      <li><span>USACO — Silver Division</span><span class="muted">2025</span></li>
+      <li><span>CEMC Math Contests — Distinction in Euclid, Hypatia, Fermat</span><span class="muted">2025</span></li>
+      <li><span>CEMC Math Contests — Distinction in Cayley, CSMC</span><span class="muted">2024</span></li>
+    </ul>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <dl class="skills">
+      <dt>Languages</dt><dd>C++, Python, Java, TypeScript, JavaScript, HTML/CSS</dd>
+      <dt>Tools</dt><dd>ROS 2, WebRTC, Git/GitHub, Jupyter, pandas, NumPy, Processing</dd>
+      <dt>Also</dt><dd>Competitive programming on <a href="https://codeforces.com/profile/joson1005" target="_blank" rel="noopener">Codeforces</a> · machine learning · data analysis</dd>
+    </dl>
+  </section>
+</main>
+
+<footer id="contact">
+  <div class="wrap">
+    <div class="row">
+      <a href="mailto:nitishjoson83@gmail.com">nitishjoson83@gmail.com</a>
+      <a href="https://github.com/AstroAtomic" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.linkedin.com/in/nitish-joson-terance-joe-heston-978b7928b" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://codeforces.com/profile/joson1005" target="_blank" rel="noopener">Codeforces</a>
+    </div>
+    <div>Vancouver, BC · from Saskatoon, SK · Open to summer 2027 internships in drones, robotics, and mining software.</div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var root = document.documentElement, btn = document.getElementById('theme');
+  try { var s = localStorage.getItem('theme'); if (s) root.setAttribute('data-theme', s); } catch (e) {}
+  btn.addEventListener('click', function () {
+    var cur = root.getAttribute('data-theme') ||
+      (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    var next = cur === 'dark' ? 'light' : 'dark';
+    root.setAttribute('data-theme', next);
+    try { localStorage.setItem('theme', next); } catch (e) {}
+  });
+})();
+</script>
+</body>
+</html>
