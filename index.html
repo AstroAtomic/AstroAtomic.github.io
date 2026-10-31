@@ -9,83 +9,83 @@
 <meta property="og:description" content="UBC Engineering student building software for drones and mine safety.">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <style>
-:root {
-  --bg: #fbfbfa; --fg: #1a1a1a; --muted: #5f6368; --faint: #e7e7e4;
-  --accent: #1f5fae; --card: #ffffff;
-}
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --bg: #111214; --fg: #e8e8e6; --muted: #9aa0a6; --faint: #26282c;
-    --accent: #7fb0ff; --card: #17191c;
-  }
-}
-:root[data-theme="dark"] {
-  --bg: #111214; --fg: #e8e8e6; --muted: #9aa0a6; --faint: #26282c;
-  --accent: #7fb0ff; --card: #17191c;
-}
+:root { --bg:#fbfbfa; --fg:#1a1a1a; --muted:#5f6368; --faint:#e7e7e4; --accent:#1f5fae; --card:#fff; --shot:#f0f0ed; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --bg:#111214; --fg:#e8e8e6; --muted:#9aa0a6; --faint:#26282c; --accent:#7fb0ff; --card:#17191c; --shot:#0c0d0f; } }
+:root[data-theme="dark"] { --bg:#111214; --fg:#e8e8e6; --muted:#9aa0a6; --faint:#26282c; --accent:#7fb0ff; --card:#17191c; --shot:#0c0d0f; }
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
-body {
-  margin: 0; background: var(--bg); color: var(--fg);
-  font: 16px/1.6 ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif;
-  -webkit-font-smoothing: antialiased;
-}
-a { color: var(--accent); text-decoration: none; }
-a:hover { text-decoration: underline; text-underline-offset: 3px; }
-.wrap { max-width: 720px; margin: 0 auto; padding: 0 20px; }
+body { margin:0; background:var(--bg); color:var(--fg); font:16px/1.6 ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,sans-serif; -webkit-font-smoothing:antialiased; }
+a { color:var(--accent); text-decoration:none; }
+a:hover { text-decoration:underline; text-underline-offset:3px; }
+.wrap { max-width:800px; margin:0 auto; padding:0 20px; }
 
-nav { position: sticky; top: 0; background: color-mix(in srgb, var(--bg) 88%, transparent);
-  backdrop-filter: blur(8px); border-bottom: 1px solid var(--faint); z-index: 10; }
-nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 56px; }
-nav .brand { font-weight: 650; color: var(--fg); white-space: nowrap; }
-nav .links { display: flex; gap: 18px; align-items: center; font-size: 14px; }
-nav .links a { color: var(--muted); }
-nav .links a:hover { color: var(--fg); text-decoration: none; }
-#theme { background: none; border: 1px solid var(--faint); color: var(--muted); border-radius: 8px;
-  width: 32px; height: 32px; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; }
-#theme:hover { color: var(--fg); }
-@media (max-width: 560px) { nav .links a.hide-sm { display: none; } }
+nav { position:sticky; top:0; background:color-mix(in srgb,var(--bg) 88%,transparent); backdrop-filter:blur(8px); border-bottom:1px solid var(--faint); z-index:10; }
+nav .wrap { display:flex; align-items:center; justify-content:space-between; height:56px; }
+nav .brand { font-weight:650; color:var(--fg); white-space:nowrap; }
+nav .links { display:flex; gap:18px; align-items:center; font-size:14px; }
+nav .links a { color:var(--muted); }
+nav .links a:hover { color:var(--fg); text-decoration:none; }
+#theme { background:none; border:1px solid var(--faint); color:var(--muted); border-radius:8px; width:32px; height:32px; cursor:pointer; display:inline-flex; align-items:center; justify-content:center; }
+#theme:hover { color:var(--fg); }
+@media (max-width:600px) { nav .links a.hide-sm { display:none; } }
 
-header.hero { padding: 72px 0 40px; }
-.hero h1 { font-size: clamp(34px, 7vw, 46px); line-height: 1.1; margin: 0 0 14px; letter-spacing: -0.02em; }
-.hero p.lead { font-size: 19px; color: var(--muted); margin: 0 0 22px; max-width: 600px; }
-.hero p.lead strong { color: var(--fg); font-weight: 600; }
-.btns { display: flex; flex-wrap: wrap; gap: 10px; }
-.btn { display: inline-flex; align-items: center; gap: 6px; padding: 8px 14px; border-radius: 9px;
-  border: 1px solid var(--faint); color: var(--fg); font-size: 14px; background: var(--card); }
-.btn:hover { text-decoration: none; border-color: var(--muted); }
-.btn.primary { background: var(--fg); color: var(--bg); border-color: var(--fg); }
+header.hero { padding:72px 0 40px; }
+.hero h1 { font-size:clamp(34px,7vw,46px); line-height:1.1; margin:0 0 14px; letter-spacing:-0.02em; }
+.hero p.lead { font-size:19px; color:var(--muted); margin:0 0 22px; max-width:640px; }
+.hero p.lead strong { color:var(--fg); font-weight:600; }
+.btns { display:flex; flex-wrap:wrap; gap:10px; }
+.btn { display:inline-flex; align-items:center; gap:6px; padding:8px 14px; border-radius:9px; border:1px solid var(--faint); color:var(--fg); font-size:14px; background:var(--card); }
+.btn:hover { text-decoration:none; border-color:var(--muted); }
+.btn.primary { background:var(--fg); color:var(--bg); border-color:var(--fg); }
 
-section { padding: 28px 0; border-top: 1px solid var(--faint); }
-section h2 { font-size: 13px; text-transform: uppercase; letter-spacing: .12em; color: var(--muted);
-  margin: 0 0 18px; font-weight: 600; }
+section { padding:32px 0; border-top:1px solid var(--faint); }
+section h2 { font-size:13px; text-transform:uppercase; letter-spacing:.12em; color:var(--muted); margin:0 0 20px; font-weight:600; }
 
-.item { margin-bottom: 26px; }
-.item:last-child { margin-bottom: 0; }
-.item-head { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; align-items: baseline; }
-.item h3 { font-size: 17px; margin: 0; font-weight: 620; }
-.item .when { font-size: 14px; color: var(--muted); white-space: nowrap; }
-.item .role { color: var(--muted); font-size: 15px; margin: 2px 0 8px; }
-.item ul { margin: 0; padding-left: 18px; }
-.item li { margin: 4px 0; }
-.tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
-.tag { font-size: 12px; padding: 2px 8px; border-radius: 999px; border: 1px solid var(--faint); color: var(--muted); }
+.item { margin-bottom:30px; }
+.item:last-child { margin-bottom:0; }
+.item-head { display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap; align-items:baseline; }
+.item h3 { font-size:18px; margin:0; font-weight:620; }
+.when { font-size:14px; color:var(--muted); white-space:nowrap; }
+.role { color:var(--muted); font-size:15px; margin:2px 0 8px; }
+.item ul, .proj ul { margin:0; padding-left:18px; }
+.item li, .proj li { margin:4px 0; }
+.tags { display:flex; flex-wrap:wrap; gap:6px; margin-top:10px; }
+.tag { font-size:12px; padding:2px 8px; border-radius:999px; border:1px solid var(--faint); color:var(--muted); }
+.more { display:flex; flex-wrap:wrap; gap:14px; margin-top:10px; font-size:14px; }
 
-.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; }
-.card { background: var(--card); border: 1px solid var(--faint); border-radius: 12px; padding: 16px; }
-.card h3 { font-size: 16px; margin: 0 0 6px; }
-.card p { margin: 0; color: var(--muted); font-size: 14.5px; }
-.card .tags { margin-top: 12px; }
+.video { position:relative; aspect-ratio:16/9; border-radius:12px; overflow:hidden; border:1px solid var(--faint); margin-top:14px; background:#000; }
+.video iframe { position:absolute; inset:0; width:100%; height:100%; border:0; }
+.caption { font-size:13px; color:var(--muted); margin-top:6px; }
 
-.plain { list-style: none; padding: 0; margin: 0; }
-.plain li { padding: 6px 0; display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
-.plain li span.muted { color: var(--muted); font-size: 14px; }
+.proj { background:var(--card); border:1px solid var(--faint); border-radius:14px; overflow:hidden; margin-bottom:22px; }
+.proj:last-child { margin-bottom:0; }
+.proj .body { padding:18px 20px 20px; }
+.proj h3 { font-size:18px; margin:0; }
+.proj .sub { color:var(--muted); font-size:14px; margin:2px 0 10px; }
+.proj p { margin:0 0 10px; }
+.strip { display:flex; gap:8px; overflow-x:auto; scroll-snap-type:x mandatory; padding:10px; background:var(--shot); border-bottom:1px solid var(--faint); }
+.strip img { height:210px; width:auto; flex:0 0 auto; border-radius:8px; scroll-snap-align:start; cursor:zoom-in; background:var(--faint); }
+@media (max-width:600px) { .strip img { height:160px; } }
 
-.skills dt { font-weight: 600; font-size: 15px; }
-.skills dd { margin: 2px 0 12px; color: var(--muted); }
+.paper { border-left:3px solid var(--accent); padding:2px 0 2px 16px; }
+.plain { list-style:none; padding:0; margin:0; }
+.plain li { padding:7px 0; display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap; border-bottom:1px dashed var(--faint); }
+.plain li:last-child { border-bottom:0; }
+.plain .muted { color:var(--muted); font-size:14px; }
+.grid2 { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:14px; }
+.mini { background:var(--card); border:1px solid var(--faint); border-radius:12px; padding:14px 16px; }
+.mini h3 { font-size:15.5px; margin:0; }
+.mini .when { display:block; margin:1px 0 6px; font-size:13px; }
+.mini p { margin:0; color:var(--muted); font-size:14.5px; }
+.skills dt { font-weight:600; font-size:15px; }
+.skills dd { margin:2px 0 12px; color:var(--muted); }
 
-footer { padding: 36px 0 56px; border-top: 1px solid var(--faint); color: var(--muted); font-size: 14px; }
-footer .row { display: flex; flex-wrap: wrap; gap: 16px; margin-bottom: 10px; }
+#lb { position:fixed; inset:0; background:rgba(0,0,0,.88); display:none; align-items:center; justify-content:center; z-index:50; cursor:zoom-out; padding:20px; }
+#lb.open { display:flex; }
+#lb img { max-width:100%; max-height:100%; border-radius:8px; }
+
+footer { padding:36px 0 56px; border-top:1px solid var(--faint); color:var(--muted); font-size:14px; }
+footer .row { display:flex; flex-wrap:wrap; gap:16px; margin-bottom:10px; }
 </style>
 </head>
 <body>
@@ -97,6 +97,7 @@ footer .row { display: flex; flex-wrap: wrap; gap: 16px; margin-bottom: 10px; }
       <a href="#experience">Experience</a>
       <a href="#projects">Projects</a>
       <a class="hide-sm" href="#awards">Awards</a>
+      <a class="hide-sm" href="#community">Community</a>
       <a href="#contact">Contact</a>
       <button id="theme" aria-label="Toggle dark mode" title="Toggle theme"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6.5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M8 1.5a6.5 6.5 0 0 1 0 13z" fill="currentColor"/></svg></button>
     </div>
@@ -112,6 +113,7 @@ footer .row { display: flex; flex-wrap: wrap; gap: 16px; margin-bottom: 10px; }
       <a class="btn" href="mailto:nitishjoson83@gmail.com">Email</a>
       <a class="btn" href="https://github.com/AstroAtomic" target="_blank" rel="noopener">GitHub</a>
       <a class="btn" href="https://www.linkedin.com/in/nitish-joson-terance-joe-heston-978b7928b" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn" href="https://nitish-terance.itch.io/" target="_blank" rel="noopener">itch.io</a>
     </div>
   </header>
 
@@ -126,7 +128,7 @@ footer .row { display: flex; flex-wrap: wrap; gap: 16px; margin-bottom: 10px; }
       <div class="role">Software Sub-Team · Vancouver, BC</div>
       <ul>
         <li>Building WebRTC signaling and RTSP video streaming to deliver live video from the aircraft to the team’s Ground Communication System (GCOM).</li>
-        <li>Selected from 115 applicants for a student team that designs, builds, and flies autonomous aircraft for international competition.</li>
+        <li>Selected from 115 applicants through a competitive interview for UBC’s student team that designs, builds, and flies autonomous aircraft for international competition.</li>
         <li>Working alongside the electrical and mechanical sub-teams in a multidisciplinary engineering environment.</li>
       </ul>
       <div class="tags"><span class="tag">ROS 2</span><span class="tag">WebRTC</span><span class="tag">RTSP</span></div>
@@ -137,54 +139,157 @@ footer .row { display: flex; flex-wrap: wrap; gap: 16px; margin-bottom: 10px; }
         <h3><a href="https://staterasafety.com/" target="_blank" rel="noopener">Statera</a></h3>
         <span class="when">2026 – Present</span>
       </div>
-      <div class="role">Co-Founder &amp; Developer · Saskatoon, SK</div>
+      <div class="role">Co-Founder &amp; Developer · Saskatoon, SK · with Tim Li and Princess Tayab</div>
       <ul>
-        <li>Co-founded a safety communication and ticketing platform that lets frontline mine workers report hazards easily and tracks every issue to completion.</li>
-        <li>Developing an AI triage system that ranks safety tickets by hazard severity, using a priority/urgency/severity framework built around Saskatchewan mining regulations.</li>
+        <li>Co-founded a safety communication and ticketing platform: workers report a hazard, near miss, or incident in about a minute, and every issue is tracked through to resolution.</li>
+        <li>Developing an AI triage system that analyzes safety reports and ranks tickets by hazard severity, using a priority/urgency/severity framework built around Saskatchewan mining regulations.</li>
         <li>Designed crew-based ticket filtering so supervisors can switch between their own crew’s issues and the whole site.</li>
-        <li><strong>AI4SafeMines finalist</strong> (IMII &amp; ISSA): 1 of 3 finalist teams from 11. Pitched to an industry judging panel at the ISSA Mine Safety Conference in Saskatoon (Sept 2026).</li>
+        <li><strong>AI4SafeMines finalist</strong> — an international AI innovation competition run by the International Minerals Innovation Institute (IMII) with the ISSA Mining Safety Conference. Advanced as 1 of 3 finalist teams from 11 preliminary teams, then pitched to an industry judging panel in Saskatoon (Sept 2026) alongside two international finalist teams.</li>
+        <li>Now incorporating Statera as a startup to bring the platform to market.</li>
       </ul>
-      <div class="tags"><span class="tag">TypeScript</span><span class="tag">AI / ML</span><span class="tag">Startup</span></div>
+      <div class="video"><iframe src="https://www.youtube-nocookie.com/embed/wUa9cuKbi70?rel=0" title="Statera workflow demo" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe></div>
+      <div class="caption">Statera workflow demo</div>
+      <div class="more">
+        <a href="https://staterasafety.com/" target="_blank" rel="noopener">staterasafety.com ↗</a>
+        <a href="https://issasafety.cim.org/ai4safe-mines/" target="_blank" rel="noopener">AI4SafeMines at ISSA 2026 ↗</a>
+        <a href="https://www.canadianminingjournal.com/news/students-compete-for-6000-ai-mining-prize-at-issa-conference/" target="_blank" rel="noopener">Canadian Mining Journal ↗</a>
+      </div>
     </div>
   </section>
 
   <section id="projects">
-    <h2>Projects &amp; Research</h2>
-    <div class="grid">
-      <div class="card">
-        <h3>Machine Learning in Chess</h3>
-        <p>Preprint in the Research Archive of Rising Scholars: can meta-game data like time usage and rating difference predict who wins? Built and tested Random Forest models to find out.</p>
-        <div class="tags"><span class="tag">Python</span><span class="tag">Random Forest</span><span class="tag">2025</span></div>
+    <h2>Projects</h2>
+
+    <article class="proj">
+      <div class="strip">
+        <img src="https://img.itch.zone/aW1nLzIyMDgwNzU5LmpwZw==/original/JVn31i.jpg" alt="GPS simulation cover" loading="lazy">
+        <img src="https://img.itch.zone/aW1hZ2UvMzcwODkxNi8yMjA4MDczMC5wbmc=/original/QiorOv.png" alt="GPS simulation screenshot" loading="lazy">
+        <img src="https://img.itch.zone/aW1hZ2UvMzcwODkxNi8yMjA4MDczMS5wbmc=/original/usKEbe.png" alt="GPS simulation screenshot" loading="lazy">
+        <img src="https://img.itch.zone/aW1hZ2UvMzcwODkxNi8yMjA4MDczMy5wbmc=/original/sAMwHT.png" alt="GPS simulation screenshot" loading="lazy">
       </div>
-      <div class="card">
-        <h3>GPS Positioning Simulation</h3>
-        <p>Interactive explainer of how GPS finds you: signal propagation, clock sync, special-relativity time correction, and trilateration.</p>
-        <div class="tags"><span class="tag">Java</span><span class="tag">Processing</span><span class="tag">2025</span></div>
+      <div class="body">
+        <div class="item-head"><h3>How Space-Time and Signals Pinpoint Your Position</h3><span class="when">2025 · Grade 11</span></div>
+        <div class="sub">GPS simulation · Java (Processing) · Physics</div>
+        <p>An educational simulation that demystifies how GPS determines your location by combining special relativity with trilateration.</p>
+        <ul>
+          <li>Interactive visualizations of satellite signal propagation, time synchronization, and position calculation.</li>
+          <li>Built to make modern-physics ideas intuitive for students.</li>
+        </ul>
+        <div class="more"><a href="https://nitish-terance.itch.io/how-a-gps-works-using-simulations" target="_blank" rel="noopener">View on itch.io ↗</a></div>
       </div>
-      <div class="card">
-        <h3>Echo</h3>
-        <p>A platformer set in a pitch-black world you navigate by echolocation. Engine written from scratch, with A* pathfinding for enemies.</p>
-        <div class="tags"><span class="tag">Java</span><span class="tag">Game engine</span><span class="tag">2025</span></div>
+    </article>
+
+    <article class="proj">
+      <div class="strip">
+        <img src="https://img.itch.zone/aW1nLzIwOTA4MTkwLnBuZw==/original/oKIsoT.png" alt="Echo cover art" loading="lazy">
+        <img src="https://img.itch.zone/aW1hZ2UvMzUwNzc5NC8yMDkwODMzMS5wbmc=/original/aXSUDs.png" alt="Echo gameplay screenshot" loading="lazy">
+        <img src="https://img.itch.zone/aW1hZ2UvMzUwNzc5NC8yMDkwODQwMy5wbmc=/original/FUYT7l.png" alt="Echo gameplay screenshot" loading="lazy">
+        <img src="https://img.itch.zone/aW1hZ2UvMzUwNzc5NC8yMDkwODQ1NS5wbmc=/original/Og5WsC.png" alt="Echo gameplay screenshot" loading="lazy">
       </div>
+      <div class="body">
+        <div class="item-head"><h3>Echo</h3><span class="when">2025 · Grade 11</span></div>
+        <div class="sub">Sound-based exploration game · Java (Processing)</div>
+        <p><em>See with sound. Survive the darkness.</em> A prototype where you guide Echo through a pitch-black maze using echolocation, throwing sound bombs to lure away the monster that hunts you.</p>
+        <ul>
+          <li>Built the platformer engine from the ground up and integrated external audio libraries (Sound, Minim) for the sound engine.</li>
+          <li>Enemy movement driven by A* pathfinding.</li>
+        </ul>
+        <div class="more"><a href="https://nitish-terance.itch.io/echo" target="_blank" rel="noopener">View on itch.io ↗</a></div>
+      </div>
+    </article>
+
+    <article class="proj">
+      <div class="strip">
+        <img src="https://img.itch.zone/aW1nLzI3NzEyMDkyLnBuZw==/original/sBAO%2FY.png" alt="French Canada History cover" loading="lazy">
+        <img src="https://img.itch.zone/aW1hZ2UvNDY1MDQ3Ny8yNzcxMTkwNS5wbmc=/original/JWPlMy.png" alt="French Canada timeline screenshot" loading="lazy">
+        <img src="https://img.itch.zone/aW1hZ2UvNDY1MDQ3Ny8yNzcxMTkxNS5wbmc=/original/n7TFU1.png" alt="French Canada timeline screenshot" loading="lazy">
+      </div>
+      <div class="body">
+        <div class="item-head"><h3>French Canada: A Journey Through Time</h3><span class="when">2025 · Grade 12</span></div>
+        <div class="sub">Interactive history timeline · Java (Processing)</div>
+        <p>An interactive timeline of the events, people, and turning points that shaped French Canada, from early exploration and New France through Confederation and the Quiet Revolution.</p>
+        <ul>
+          <li>Hover-based interface that reveals event details and historical context as you move across key dates.</li>
+        </ul>
+        <div class="more"><a href="https://nitish-terance.itch.io/french-canada-history" target="_blank" rel="noopener">View on itch.io ↗</a></div>
+      </div>
+    </article>
+
+    <article class="proj">
+      <div class="strip">
+        <img src="https://img.itch.zone/aW1nLzIwOTYwNTI3LnBuZw==/original/YAyFWu.png" alt="Processing Menu Template cover" loading="lazy">
+        <img src="https://img.itch.zone/aW1hZ2UvMzUxNzc2NC8yMDk2MDU1MS5wbmc=/original/KgIzGk.png" alt="Processing Menu Template screenshot" loading="lazy">
+      </div>
+      <div class="body">
+        <div class="item-head"><h3>Processing Menu Template</h3><span class="when">2025</span></div>
+        <div class="sub">Open-source starter kit · Java (Processing)</div>
+        <p>A reusable menu and page-navigation system for Processing projects: a <code>gameState</code> page model and a custom Button class with hover, active, and inactive states.</p>
+        <div class="more"><a href="https://nitish-terance.itch.io/processing-menu-template" target="_blank" rel="noopener">View on itch.io ↗</a></div>
+      </div>
+    </article>
+  </section>
+
+  <section id="research">
+    <h2>Research</h2>
+    <div class="paper">
+      <div class="item-head"><h3 style="font-size:18px;margin:0">Can We Use Machine Learning to Predict Win/Loss Rates in Chess Using Meta-Game Data?</h3></div>
+      <div class="role">Independent researcher · Preprint, Research Archive of Rising Scholars · Summer 2025</div>
+      <p style="margin:0 0 8px">Chess AI usually studies board positions. This paper asks whether outcomes can be predicted from context alone: rating differences, time management, and activity statistics. I designed and tested Random Forest models on a large game dataset and found clear correlations between these signals and results.</p>
+      <div class="more">
+        <a href="https://research-archive.org/index.php/rars/preprint/view/3133" target="_blank" rel="noopener">Read the paper ↗</a>
+        <a href="https://doi.org/10.58445/rars.3133" target="_blank" rel="noopener">DOI: 10.58445/rars.3133</a>
+      </div>
+      <div class="tags"><span class="tag">Python</span><span class="tag">Random Forest</span><span class="tag">Data analysis</span></div>
     </div>
   </section>
 
   <section id="awards">
-    <h2>Awards</h2>
+    <h2>Honours &amp; Awards</h2>
     <ul class="plain">
-      <li><span>Canadian Computing Competition — Senior Distinction</span><span class="muted">2025, 2026</span></li>
-      <li><span>USACO — Silver Division</span><span class="muted">2025</span></li>
-      <li><span>CEMC Math Contests — Distinction in Euclid, Hypatia, Fermat</span><span class="muted">2025</span></li>
-      <li><span>CEMC Math Contests — Distinction in Cayley, CSMC</span><span class="muted">2024</span></li>
+      <li><span><strong>AI4SafeMines</strong> — Finalist (Team Statera), IMII &amp; ISSA</span><span class="muted">2026</span></li>
+      <li><span><strong>Canadian Computing Competition</strong> — Distinction, Senior level</span><span class="muted">2025, 2026</span></li>
+      <li><span><strong>Canadian Computing Competition</strong> — Distinction, Junior level</span><span class="muted">2024</span></li>
+      <li><span><strong>USACO</strong> — Silver Division</span><span class="muted">2025</span></li>
+      <li><span><strong>CEMC Euclid, Hypatia, Fermat</strong> — Distinction (top 25%)</span><span class="muted">2025</span></li>
+      <li><span><strong>CEMC Cayley, CSMC</strong> — Distinction (top 25%)</span><span class="muted">2024</span></li>
+      <li><span><strong>CEMC CIMC</strong> — Distinction (top 25%)</span><span class="muted">2023</span></li>
     </ul>
+    <p class="caption" style="margin-top:10px">Ranked first in my school in every CEMC math and computing contest I wrote.</p>
+  </section>
+
+  <section id="education">
+    <h2>Education</h2>
+    <div class="item">
+      <div class="item-head"><h3>University of British Columbia</h3><span class="when">2026 – Expected 2030</span></div>
+      <div class="role">Bachelor of Applied Science, First-Year Engineering · intended specialization: Engineering Physics</div>
+    </div>
+    <div class="item">
+      <div class="item-head"><h3>Holy Cross High School, Saskatoon</h3><span class="when">Graduated June 2026</span></div>
+      <div class="role">98% academic average · SAT 1530 (Math 800)</div>
+      <div class="tags"><span class="tag">AP Computer Science A · 5</span><span class="tag">AP Calculus AB · 5</span><span class="tag">AP Chemistry · 5</span><span class="tag">AP English Literature · 4</span></div>
+    </div>
+  </section>
+
+  <section id="community">
+    <h2>Leadership, Work &amp; Community</h2>
+    <div class="grid2">
+      <div class="mini"><h3>Founder &amp; Leader, Math-Elites Club</h3><span class="when">Holy Cross High School · 2024 – 2025</span><p>Founded the school’s math competition club to get more students into math contests.</p></div>
+      <div class="mini"><h3>Math &amp; English Tutor, Kumon</h3><span class="when">Saskatoon · 2023 – 2024</span><p>Part-time tutor for students in math and reading.</p></div>
+      <div class="mini"><h3>Camp Counsellor, SCI-FI Science Camps</h3><span class="when">University of Saskatchewan · 2024 – 2025</span><p>Guided Grades 7–10 students through STEM programs in coding, robotics, and physics.</p></div>
+      <div class="mini"><h3>Youth Chess Instructor, Sask Horizon Chess Club</h3><span class="when">Saskatoon · 2022 – 2025</span><p>Coached young players and helped organize events and grow club membership. <a href="https://skhorizonchess.ca" target="_blank" rel="noopener">skhorizonchess.ca ↗</a></p></div>
+      <div class="mini"><h3>Event Volunteer &amp; Youth Leader, Saskatoon Tamil Association</h3><span class="when">2022 – 2025</span><p>Helped organize four cultural events of around 200 attendees each; supported logistics and directed and performed in dramas.</p></div>
+      <div class="mini"><h3>Volunteer, Preston Park Retirement Home</h3><span class="when">Saskatoon · 2023 – 2025</span><p>Spent two years keeping seniors company through games and conversation.</p></div>
+      <div class="mini"><h3>Church Volunteer, Youth Bible Summer Camp</h3><span class="when">Holy Spirit Church, Saskatoon · 2022</span><p>Helped lead worship, crafts, and games at Summer Bible School, and supported parish events.</p></div>
+    </div>
   </section>
 
   <section id="skills">
     <h2>Skills</h2>
     <dl class="skills">
-      <dt>Languages</dt><dd>C++, Python, Java, TypeScript, JavaScript, HTML/CSS</dd>
-      <dt>Tools</dt><dd>ROS 2, WebRTC, Git/GitHub, Jupyter, pandas, NumPy, Processing</dd>
-      <dt>Also</dt><dd>Competitive programming on <a href="https://codeforces.com/profile/joson1005" target="_blank" rel="noopener">Codeforces</a> · machine learning · data analysis</dd>
+      <dt>Languages</dt><dd>C++, Java, Python, TypeScript, JavaScript, HTML, CSS</dd>
+      <dt>Tools &amp; platforms</dt><dd>ROS 2, WebRTC, Git/GitHub, VS Code, Jupyter, pandas, NumPy, Processing, Excel</dd>
+      <dt>Machine learning</dt><dd>Random Forest, logistic regression, data analysis</dd>
+      <dt>Competitive programming</dt><dd>Algorithms and data structures in C++ on <a href="https://codeforces.com/profile/joson1005" target="_blank" rel="noopener">Codeforces</a> · USACO Silver</dd>
     </dl>
   </section>
 </main>
@@ -196,22 +301,30 @@ footer .row { display: flex; flex-wrap: wrap; gap: 16px; margin-bottom: 10px; }
       <a href="https://github.com/AstroAtomic" target="_blank" rel="noopener">GitHub</a>
       <a href="https://www.linkedin.com/in/nitish-joson-terance-joe-heston-978b7928b" target="_blank" rel="noopener">LinkedIn</a>
       <a href="https://codeforces.com/profile/joson1005" target="_blank" rel="noopener">Codeforces</a>
+      <a href="https://nitish-terance.itch.io/" target="_blank" rel="noopener">itch.io</a>
     </div>
     <div>Vancouver, BC · from Saskatoon, SK · Open to summer 2027 internships in drones, robotics, and mining software.</div>
   </div>
 </footer>
+
+<div id="lb" role="dialog" aria-label="Image preview"><img alt=""></div>
 
 <script>
 (function () {
   var root = document.documentElement, btn = document.getElementById('theme');
   try { var s = localStorage.getItem('theme'); if (s) root.setAttribute('data-theme', s); } catch (e) {}
   btn.addEventListener('click', function () {
-    var cur = root.getAttribute('data-theme') ||
-      (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    var cur = root.getAttribute('data-theme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
     var next = cur === 'dark' ? 'light' : 'dark';
     root.setAttribute('data-theme', next);
     try { localStorage.setItem('theme', next); } catch (e) {}
   });
+  var lb = document.getElementById('lb'), lbImg = lb.querySelector('img');
+  document.querySelectorAll('.strip img').forEach(function (img) {
+    img.addEventListener('click', function () { lbImg.src = img.src; lbImg.alt = img.alt; lb.classList.add('open'); });
+  });
+  lb.addEventListener('click', function () { lb.classList.remove('open'); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') lb.classList.remove('open'); });
 })();
 </script>
 </body>
